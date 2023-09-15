@@ -1,0 +1,33 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class VBoxExample extends Application {
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("VBox Example");
+
+        VBox vbox = new VBox(); // Create a VBox
+        vbox.setSpacing(10); // Set spacing between child nodes
+
+        Label nameLabel = new Label("Name:");
+        TextField nameField = new TextField();
+
+        Label ageLabel = new Label("Age:");
+        TextField ageField = new TextField();
+
+        vbox.getChildren().addAll(nameLabel, nameField, ageLabel, ageField); // Add labels and text fields to the VBox
+
+        Scene scene = new Scene(vbox, 300, 200);
+        primaryStage.setScene(scene);
+
+        primaryStage.show();
+    }
+}
